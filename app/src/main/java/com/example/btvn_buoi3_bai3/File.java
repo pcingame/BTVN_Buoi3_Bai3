@@ -3,8 +3,10 @@ package com.example.btvn_buoi3_bai3;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "File")
-public class File {
+public class File implements Serializable {
 
     @PrimaryKey (autoGenerate = true)
     private int id;
@@ -32,5 +34,13 @@ public class File {
 
     public void setName(String name) {
         Name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "File{" +
+                "id=" + id +
+                ", Name='" + Name + '\'' +
+                '}';
     }
 }

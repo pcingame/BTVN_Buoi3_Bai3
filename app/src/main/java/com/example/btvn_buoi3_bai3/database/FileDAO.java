@@ -23,4 +23,7 @@ public interface FileDAO {
 
     @Query("Update File set name = '' where name = :Name ")
     void updateFileName(String Name);
+
+    /*@Update
+    void updateFileName(File file);*/
 }

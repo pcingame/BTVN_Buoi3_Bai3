@@ -24,7 +24,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.MyViewHolder>{
     }
 
     public interface IClickItemFile {
-        void updateFileName(File file);
+        void updateFileName(String name);
         void deleteFile(File file);
     }
 
@@ -58,7 +58,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.MyViewHolder>{
         holder.imgUpdateName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                iClickItemFile.updateFileName(file);
+                iClickItemFile.updateFileName(file.getName());
             }
         });
     }

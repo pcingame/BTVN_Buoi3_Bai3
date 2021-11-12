@@ -28,6 +28,7 @@ import java.util.List;
     private RecyclerView recyclerView;
     private FileAdapter adapter;
     private List<File> mFileList;
+    //private File file;
 
 
     @Override
@@ -51,8 +52,8 @@ import java.util.List;
 
         adapter = new FileAdapter(new FileAdapter.IClickItemFile() {
             @Override
-            public void updateFileName(File file) {
-                clickUpdateFileName(file);
+            public void updateFileName(String name) {
+                clickUpdateFileName(name);
             }
 
             @Override
@@ -133,10 +134,10 @@ import java.util.List;
             adapter.setData(mFileList);
         }
 
-        private void clickUpdateFileName(File file) {
-            /*FileDatabase.getInstance(this).fileDAO().updateFileName(file);
+        private void clickUpdateFileName(String name) {
+            FileDatabase.getInstance(this).fileDAO().updateFileName(name);
             Toast.makeText(this, "Update user successfully", Toast.LENGTH_SHORT).show();
-            loadData();*/
+            loadData();
         }
 
 
